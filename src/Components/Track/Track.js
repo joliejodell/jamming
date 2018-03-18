@@ -4,6 +4,7 @@ import './Track.css';
 class Track extends Component {
   constructor(props) {
     super(props);
+
   }
   addTrack(event) {
     this.props.onAdd(this.props.track);

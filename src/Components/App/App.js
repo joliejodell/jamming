@@ -28,7 +28,7 @@ class App extends Component {
     this.setState({playlistTracks:newState})}
   };
   removeTrack(track){
-  if(this.playlistTracks.find(t=>t.id === track.id)){const newState = this.state.playlistTracks.slice(); newState.splice(track);
+  if(this.state.playlistTracks.find(t=>t.id === track.id)){const newState = this.state.playlistTracks.slice(); newState.splice(track);
     this.setState({playlistTracks:newState})}
   };
   updatePlaylistName(name){
