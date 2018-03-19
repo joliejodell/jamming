@@ -1,5 +1,5 @@
 const clientId = 'fc1ea6bdd6c547ba89e4a095f705328c'; // Your client id
-const redirectUri = 'http://localhost:3000'; // Your redirect uri
+const redirectUri = 'http://joliejams.surge.sh'; // Your redirect uri
 
 let accessToken;
 
