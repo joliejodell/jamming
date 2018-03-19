@@ -21,7 +21,6 @@ class App extends Component {
     this.search = this.search.bind(this);
   }
   addTrack(track){
-    let newState = this.state.playlistTracks;
   if(!this.state.playlistTracks.find(t=>t.id === track.id)){const newState = this.state.playlistTracks.slice(); newState.push(track);
     this.setState({playlistTracks:newState})}
   };
