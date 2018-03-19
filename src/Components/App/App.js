@@ -21,16 +21,19 @@ class App extends Component {
     this.search = this.search.bind(this);
   }
   addTrack(track){
+    let newState = this.state.playlistTracks;
   if(!this.state.playlistTracks.find(t=>t.id === track.id)){const newState = this.state.playlistTracks.slice(); newState.push(track);
     this.setState({playlistTracks:newState})}
-  }
+  };
   removeTrack(track){
-  if(this.state.playlistTracks.find(t=>t.id === track.id)){const newState = this.state.playlistTracks.slice(); newState.splice(track);
-    this.setState({playlistTracks:newState})}
-  }
+    let newState = this.state.playlistTracks;
+    newState = newState.filter(currentTrack => currentTrack.id !== track.id);
+
+    this.setState({playlistTracks:newState});
+  };
   updatePlaylistName(name){
   this.setState({playlistName: name});
-  }
+  };
   savePlaylist(){
     const trackUris = this.state.playlistTracks.map(track => track.uri);
 Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
@@ -39,7 +42,7 @@ Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
     playlistTracks: []
   });
 });
-  }
+  };
   search(term){
     Spotify.search(term).then(searchResults => {
   this.setState({searchResults: searchResults});
