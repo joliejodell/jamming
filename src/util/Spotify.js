@@ -21,6 +21,7 @@ const Spotify = {
      window.location = accessUrl;
    }
  },
+
  search(term){
    const accessToken = Spotify.getAccessToken();
    return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
@@ -42,6 +43,7 @@ const Spotify = {
      }));
    });
  },
+
  savePlaylist(name, trackUris) {
   if (!name || !trackUris.length) {
     return;
@@ -66,11 +68,10 @@ const Spotify = {
         headers: headers,
         method: 'POST',
         body: JSON.stringify({uris: trackUris})
+        });
       });
     });
-  });
-}
-    };
-
+  }
+};
 
 export default Spotify;
