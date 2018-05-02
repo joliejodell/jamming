@@ -5,3 +5,5 @@ The user can search by Name, Title or Album and can initiate the search by butto
 The user can also change the name of the playlist by clicking on the name and appending it.
 
 Songs can be added to the playlist or removed once put on the playlist before it is saved to Spotify.
+
+See live demo at http://joliejams.surge.sh/
